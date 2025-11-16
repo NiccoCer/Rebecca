@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Battesimo di Rebecca</title>
+  <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@500;700&family=Great+Vibes&display=swap" rel="stylesheet">
+  <style>
+    html, body {
+      margin: 0; padding: 0;
+      min-height: 100vh;
+      background: radial-gradient(ellipse at 70% 10%, #ffe6f7 0%, #d7e9fb 70%);
+      font-family: 'Quicksand', Arial, sans-serif;
+      color: #9d6ca0;
+      display: flex;
+      flex-direction: column;
+    }
+    .glow-bg {
+      position: fixed;
+      left: -60px; top: -90px;
+      width: 280px; height: 210px;
+      background: radial-gradient(circle, #f7cce2 0 40%, #ffe6f7 70% 100%);
+      filter: blur(16px);
+      opacity: .47;
+      z-index: 0;
+      pointer-events: none;
+    }
+    .glow-bg2 {
+      position: fixed;
+      right: -50px; bottom: -60px;
+      width: 160px; height: 120px;
+      background: radial-gradient(circle, #a6d7ef 0 60%, #fafcff 90% 100%);
+      filter: blur(14px);
+      opacity: .37;
+      z-index: 0;
+      pointer-events: none;
+    }
+    header {
+      background: rgba(255,255,255,0.96);
+      text-align: center;
+      padding: 2rem 1rem 1.2rem 1rem;
+      border-bottom: 2px solid #fbdbf0;
+      border-radius: 0 0 2rem 2rem;
+      box-shadow: 0 8px 40px -18px #eedbf0a8;
+      z-index: 2;
+      position: relative;
+    }
+    header .title {
+      font-family: 'Great Vibes', cursive;
+      font-size: 2.7rem;
+      color: #f3a3ce;
+      margin-bottom: .3rem;
+      text-shadow: 0 0 14px #faaacd80;
+      letter-spacing: 0.04em;
+    }
+    header .subtitle {
+      font-size: 1.26rem;
+      color: #9d6ca0;
+      font-family: 'Quicksand', Arial, sans-serif;
+      letter-spacing: 0.02em;
+      margin-bottom: .3rem;
+      font-weight: 500;
+    }
+    header .icons {
+      font-size: 2.2rem; margin: 0.7rem 0 0 0;
+      filter: drop-shadow(0 0 5px #f6d2daad);
+      user-select:none;
+    }
+    main {
+      flex: 1;
+      max-width: 830px;
+      margin: 0 auto;
+      padding: 2.2rem 1rem 2rem 1rem;
+      background: transparent;
+      z-index: 2;
+      position: relative;
+    }
+    footer {
+      background: rgba(255,245,250,0.94);
+      text-align: center;
+      padding: 1rem 1rem 1.6rem 1rem;
+      font-size: 1.07rem;
+      color: #ca99b0;
+      border-top: 2px solid #fbdbf0;
+      border-radius: 2rem 2rem 0 0;
+      z-index: 2;
+      position: relative;
+      box-shadow: 0 0 30px 8px #eedbf077;
+    }
+    footer .heart {
+      color: #f3a3ce;
+      font-size: 1.3rem;
+      vertical-align: middle;
+      filter: drop-shadow(0 0 5px #faaacd88);
+    }
+    @media (max-width:600px) {
+      header { padding: 1rem 0.5rem 0.8rem 0.5rem;}
+      main { padding: 1rem 0.4rem;}
+    }
+  </style>
+  <link rel="stylesheet" href="foto.css">
+  <script src="foto.js" defer></script>
+
+</head>
+<body>
+  <div class="glow-bg"></div>
+  <div class="glow-bg2"></div>
+  <header>
+    <div class="icons">🦋 ✨ 👧🏻</div>
+    <div class="title">Battesimo di Rebecca</div>
+    <div class="subtitle">Un giorno luminoso, dolce, da ricordare per sempre</div>
+  </header>
+  <main>
+    <section id="gallery-section">
+    <h2 class="section-title"></h2>
+    <div class="grid-desc">Anteprime veloci: clicca per vedere e <br> sulla tua preferita clicca su scarica la foto per averla in originale!</div>
+    <script src="gallery.js"></script>
+    <div class="gallery__grid" id="gallery"></div>
+    <div class="pagination-wrap">
+      <button id="prevPage" class="btn-page">&laquo; Precedente</button>
+      <button id="nextPage" class="btn-page">Successiva &raquo;</button>
+    </div>
+    <div class="lightbox" id="lightbox">
+      <div class="lightbox-loader" id="lightboxLoader" style="display:none;">Caricamento...</div>
+      <button class="lightbox__close" id="closeBtn" aria-label="Chiudi">&times;</button>
+      <div style="display:flex; align-items:center; justify-content:center; gap:16px; margin:22px 0 0 0;">
+        <button id="prevBtn" aria-label="Precedente" class="lightbox-nav-btn">&#8592;</button>
+        <img id="lightboxImg" class="lightbox__image" src="" alt="Foto ingrandita" style="display:none"/>
+        <button id="nextBtn" aria-label="Successiva" class="lightbox-nav-btn">&#8594;</button>
+      </div>
+      <a id="downloadBtn" class="btn--primary download-btn" download>Scarica originale</a>
+    </div>
+
+  </main>
+  <footer>
+    &copy; 2025 - powered by Niccolò Ceravolo
+  </footer>
+</body>
+</html>
